@@ -22,9 +22,13 @@ lazy val versions = new {
   val mockito = "1.9.5"
   val scalatest = "2.2.3"
   val specs2 = "2.3.12"
+  val swagger = "0.5.0"
 }
 
 libraryDependencies ++= Seq(
+
+  "com.github.xiaodongw" %% "swagger-finatra2" % versions.swagger,
+
   "com.twitter.finatra" %% "finatra-http" % versions.finatra,
   "com.twitter.finatra" %% "finatra-slf4j" % versions.finatra,
   "ch.qos.logback" % "logback-classic" % versions.logback,
