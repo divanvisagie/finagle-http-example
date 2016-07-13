@@ -3,8 +3,15 @@ package com.example
 import com.github.xiaodongw.swagger.finatra.SwaggerSupport
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
-import com.twitter.util.Future
 import io.swagger.models.{Info, Swagger}
+import com.twitter.util.Future
+
+class Test {
+
+  def doThing : Future[String] = {
+    Future value "This is a string"
+  }
+}
 
 case class Pong(pong: String)
 
@@ -45,4 +52,6 @@ class PingController extends Controller with SwaggerSupport {
     val contentString = request.getContentString()
     Future.value(Pong(s"$contentString ping"))
   }
+
+  
 }

@@ -12,7 +12,7 @@ class ExampleServer extends HttpServer {
 
   override def defaultFinatraHttpPort = ":9999"
 
-  override def configureHttp(router: HttpRouter) {
+  override def configureHttp(router: HttpRouter) : Unit = {
     router
       .filter[LoggingMDCFilter[Request, Response]]
       .filter[TraceIdMDCFilter[Request, Response]]
